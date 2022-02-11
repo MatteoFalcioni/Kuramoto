@@ -22,6 +22,7 @@ class Oscillator{
     double GetTheta() {return theta_;};
 
     void MeanField();
+    void Gen();
 
 };
 
