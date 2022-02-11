@@ -22,6 +22,8 @@ class Oscillator{
     double Getw() {return w_;}
     double GetTheta() {return theta_;};
 
+    void MeanField();
+
 };
 
 
