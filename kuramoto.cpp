@@ -1,5 +1,6 @@
 #include "kuramoto.h"
 #include <vector>
+#include <random>
 using namespace std::complex_literals;
 
 static int N;  //numero di oscillatori
@@ -23,6 +24,13 @@ std::complex<double> MF = std::polar(r, psi);  //polar costruisce un exp comples
 
 }
 
-void Oscillator::Gen(){  //funzione che genera le fasi secondo una distribuzione uniforme [giusto assumerla uniforme?] e le frequenze tramite g(w) 
-
+void Oscillator::SetSystem(){  //funzione che genera la fase di tutti gli oscillatori [mi sembra che il fatto che avessero tutti la stessa fase fosse iniziale non cambiava i risultati del modello, da rivedere] e le frequenze tramite g(w) 
+    std::vector<Oscillator> System(N);  //vettore di oscillatori
+    std::random_device seed;                        
+    std::uniform_int_distribution<double> Phases(0, 2*M_PI);
+    double THETA = Phases(seed);  //in questo modo tutti gli oscillatori partono con stessa fase; sennò mettere dentro il for e avranno fasi diverse e uniformi
+    for(int i=0; i<=N; ++i){
+        System[i].SetTheta(THETA);   //ogni oscillatore parte cn fase random
+    }
+    
 }
