@@ -22,7 +22,7 @@ class Oscillator{
     double Getw() {return w_;}
     double GetTheta() {return theta_;};
 
-    void MeanField();
+    void MeanField(std::vector<Oscillator>& System);
     std::vector<Oscillator> SetSystem(double& a, double& b);
 
 };
