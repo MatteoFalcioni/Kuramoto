@@ -4,6 +4,7 @@
 #include <cmath>
 #include <complex>
 #include <cassert>
+#include <vector>
 using namespace std::complex_literals;
 
 class Oscillator{
@@ -22,7 +23,7 @@ class Oscillator{
     double GetTheta() {return theta_;};
 
     void MeanField();
-    void SetSystem();
+    std::vector<Oscillator> SetSystem(double& a, double& b);
 
 };
 
