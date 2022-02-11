@@ -24,9 +24,8 @@ std::complex<double> MF = std::polar(r, psi);  //polar costruisce un exp comples
 
 }
 
-void Oscillator::SetSystem(){  //funzione che genera la fase di tutti gli oscillatori [mi sembra che il fatto che avessero tutti la stessa fase fosse iniziale 
+void Oscillator::SetSystem(){  //funzione che genera la fase di tutti gli oscillatori [mi sembra che il fatto che avessero tutti la stessa fase iniziale 
                                 //non cambiava i risultati del modello, da rivedere] e le frequenze tramite g(w) 
-
     std::vector<Oscillator> System(N);  //vettore di oscillatori
     std::random_device seed;                        
     std::uniform_int_distribution<double> Phases(0, 2*M_PI);
